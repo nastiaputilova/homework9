@@ -1,22 +1,21 @@
 package com.company;
 
+import java.util.Objects;
+
 public class Main {
     public static void main(String[] args) {
 
         Author pushkin = new Author("Alexander", "Pushkin");
-        System.out.println(pushkin.getFirstName() + " " + pushkin.getLastName());
-
         Author tolstoy = new Author("Lev", "Tolstoy");
-        System.out.println(tolstoy.getFirstName() + " " + tolstoy.getLastName());
 
         Book onegin = new Book("Evgeniy Onegin", pushkin, 1833);
-        System.out.println(onegin.getBookTitle() + " " + onegin.getAuthor().getFirstName() + " " + onegin.getAuthor().getLastName() + " " + onegin.getYearOfPublishing());
-
+        System.out.println(onegin);
         Book karenina = new Book("Anna Karenina", tolstoy, 1878);
-        System.out.println(karenina.getBookTitle() + " " + karenina.getAuthor().getFirstName() + " " + karenina.getAuthor().getLastName() + " " + karenina.getYearOfPublishing());
+        System.out.println(karenina);
 
         onegin.setYearOfPublishing(1832);
-        System.out.println(onegin.getYearOfPublishing());
 
+        System.out.println("pushkin.equals(tolstoy)? " + pushkin.equals(tolstoy));
+        System.out.println("onegin.equals(onegin)? " + onegin.equals(onegin));
     }
 }
